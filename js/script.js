@@ -5,7 +5,7 @@ const searchBook = () => {
     // clear data
     searchField.value = '';
     document.getElementById('error-message').style.display = 'none';
-    if (searchText == '') {
+    if (searchText === '') {
         document.getElementById('error-message').style.display = 'block';
     }
     else {
