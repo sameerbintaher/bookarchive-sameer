@@ -6,8 +6,7 @@ const searchBook = () => {
     searchField.value = '';
     document.getElementById('error-message').style.display = 'none';
     if (searchText == '') {
-        // please write something to display
-        alert('Pleae write something')
+        document.getElementById('error-message').style.display = 'block';
     }
     else {
         // load data
@@ -27,12 +26,8 @@ const displaySearchResult = docs => {
     const countResult = document.getElementById('count-result');
     document.getElementById('count-result').style.display = 'block';
     countResult.innerText = `Total search result: ${docs.length}`;
-    // console.log(docs.length);
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
-    if (docs.length == 0) {
-        // show no result found;
-    }
     docs.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -49,4 +44,10 @@ const displaySearchResult = docs => {
         `;
         searchResult.appendChild(div);
     })
+
+        .catch(error => {
+            document.getElementById("search-result").innerHTML = `
+            <h3 class="text-danger">Sorry!!! Try with another one please..</h3>
+        `
+        });
 }
