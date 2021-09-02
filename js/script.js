@@ -24,6 +24,10 @@ const displayError = error => {
 }
 
 const displaySearchResult = docs => {
+    const countResult = document.getElementById('count-result');
+    document.getElementById('count-result').style.display = 'block';
+    countResult.innerText = `Total search result: ${docs.length}`;
+    // console.log(docs.length);
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     if (docs.length == 0) {
