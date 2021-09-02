@@ -24,7 +24,7 @@ const displayError = error => {
 
 const displaySearchResult = docs => {
     const countResult = document.getElementById('count-result');
-    document.getElementById('count-result').style.display = 'block';
+    // document.getElementById('count-result').style.display = 'block';
     countResult.innerText = `Total search result: ${docs.length}`;
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
@@ -44,10 +44,4 @@ const displaySearchResult = docs => {
         `;
         searchResult.appendChild(div);
     })
-
-        .catch(error => {
-            document.getElementById("search-result").innerHTML = `
-            <h3 class="text-danger">Sorry!!! Try with another one please..</h3>
-        `
-        });
 }
